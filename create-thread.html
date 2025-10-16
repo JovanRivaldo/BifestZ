@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Thread - BiTalks</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     Navigation Bar 
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">💬</span>
+                    <span class="logo-text">BiTalks</span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <a href="threads.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+            </div>
+            <div class="navbar-auth" id="navbarAuth">
+                 User menu will be populated by JavaScript 
+            </div>
+        </div>
+    </nav>
+
+     Create Thread Page 
+    <div class="create-thread-page">
+        <div class="container">
+            <div class="create-thread-wrapper">
+                <h1>Buat Thread Baru</h1>
+                <form id="createThreadForm" class="create-thread-form">
+                    <div class="form-group">
+                        <label for="threadTitle">Judul Thread</label>
+                        <input type="text" id="threadTitle" placeholder="Masukkan judul thread yang menarik" required maxlength="200">
+                        <small id="titleCount">0/200</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="threadContent">Konten</label>
+                        <textarea id="threadContent" placeholder="Tulis konten thread Anda di sini..." required maxlength="5000"></textarea>
+                        <small id="contentCount">0/5000</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="threads.html" class="btn btn-outline">Batal</a>
+                        <button type="submit" class="btn btn-primary btn-large">Post Thread</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/threads.js"></script>
+</body>
+</html>

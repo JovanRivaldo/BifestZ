@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Detail - BiTalks</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     Navigation Bar 
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">💬</span>
+                    <span class="logo-text">BiTalks</span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <a href="threads.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+            </div>
+            <div class="navbar-auth" id="navbarAuth">
+                 User menu will be populated by JavaScript 
+            </div>
+        </div>
+    </nav>
+
+     Main Content 
+    <div class="thread-detail-container">
+        <div class="container">
+             Back Button 
+            <a href="threads.html" class="back-link">← Kembali ke Threads</a>
+
+             Thread Detail 
+            <div id="threadDetail" class="thread-detail-card">
+                 Thread content will be loaded here 
+            </div>
+
+             Comments Section 
+            <div class="comments-section">
+                <h2>Komentar</h2>
+
+                 Add Comment Form 
+                <div class="add-comment-card">
+                    <div class="add-comment-header">
+                        <img id="userAvatarComment" src="https://via.placeholder.com/40" alt="User" class="user-avatar-small">
+                        <textarea id="commentInput" placeholder="Tulis komentar Anda..." maxlength="1000"></textarea>
+                    </div>
+                    <div class="add-comment-actions">
+                        <small id="commentCount">0/1000</small>
+                        <button class="btn btn-primary btn-small" onclick="submitComment()">Kirim</button>
+                    </div>
+                </div>
+
+                 Comments List 
+                <div id="commentsList" class="comments-list">
+                     Comments will be loaded here 
+                </div>
+
+                 Loading Indicator 
+                <div id="loadingComments" class="loading-indicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Memuat komentar...</p>
+                </div>
+
+                 Empty State 
+                <div id="emptyComments" class="empty-state" style="display: none;">
+                    <p>Belum ada komentar. Jadilah yang pertama berkomentar!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/thread-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threads - BiTalks</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     Navigation Bar 
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">💬</span>
+                    <span class="logo-text">BiTalks</span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <a href="threads.html" class="nav-link active">Home</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+            </div>
+            <div class="navbar-auth" id="navbarAuth">
+                 User menu will be populated by JavaScript 
+            </div>
+        </div>
+    </nav>
+
+     Main Content 
+    <div class="threads-container">
+         Sidebar 
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3>Menu</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="threads.html" class="sidebar-link active">Semua Thread</a></li>
+                    <li><a href="profile.html" class="sidebar-link">Profil Saya</a></li>
+                    <li><a href="#" onclick="logout()" class="sidebar-link">Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Statistik</h3>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Thread</span>
+                        <span class="stat-value" id="totalThreads">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total User</span>
+                        <span class="stat-value" id="totalUsers">0</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+         Main Feed 
+        <main class="main-feed">
+             Create Thread Card 
+            <div class="create-thread-card">
+                <div class="create-thread-header">
+                    <img id="userAvatar" src="https://via.placeholder.com/48" alt="User" class="user-avatar-small">
+                    <input type="text" id="threadInput" placeholder="Apa yang ingin Anda diskusikan?" class="thread-input" readonly>
+                </div>
+                <div class="create-thread-actions">
+                    <button class="btn btn-outline btn-small">Gambar</button>
+                    <button class="btn btn-primary btn-small" onclick="openCreateThreadModal()">Post</button>
+                </div>
+            </div>
+
+             Threads Feed 
+            <div id="threadsFeed" class="threads-feed">
+                 Threads will be loaded here by JavaScript 
+            </div>
+
+             Loading Indicator 
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>Memuat thread...</p>
+            </div>
+
+             Empty State 
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p>Belum ada thread. Jadilah yang pertama membuat thread!</p>
+            </div>
+        </main>
+
+         Right Sidebar 
+        <aside class="right-sidebar">
+            <div class="sidebar-card">
+                <h3>Trending</h3>
+                <div class="trending-list">
+                    <div class="trending-item">
+                        <span class="trending-tag">#Teknologi</span>
+                        <span class="trending-count">1.2K diskusi</span>
+                    </div>
+                    <div class="trending-item">
+                        <span class="trending-tag">#Bisnis</span>
+                        <span class="trending-count">856 diskusi</span>
+                    </div>
+                    <div class="trending-item">
+                        <span class="trending-tag">#Lifestyle</span>
+                        <span class="trending-count">642 diskusi</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+     Create Thread Modal 
+    <div id="createThreadModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Buat Thread Baru</h2>
+                <button class="modal-close" onclick="closeCreateThreadModal()">&times;</button>
+            </div>
+            <form id="createThreadForm" class="modal-form">
+                <div class="form-group">
+                    <label for="threadTitle">Judul</label>
+                    <input type="text" id="threadTitle" placeholder="Masukkan judul thread" required maxlength="200">
+                    <small id="titleCount">0/200</small>
+                </div>
+                <div class="form-group">
+                    <label for="threadContent">Konten</label>
+                    <textarea id="threadContent" placeholder="Tulis konten thread Anda di sini..." required maxlength="5000"></textarea>
+                    <small id="contentCount">0/5000</small>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeCreateThreadModal()">Batal</button>
+                    <button type="submit" class="btn btn-primary">Post Thread</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/threads.js"></script>
+</body>
+</html>
